@@ -12,4 +12,6 @@ pin "select2", to: "select2.js", preload: true
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
 pin "slim-select" # @2.9.0
+pin "@splidejs/splide", to: "https://ga.jspm.io/npm:@splidejs/splide@4.1.4/dist/js/splide.esm.js"
+pin "@splidejs/splide/css", to: "https://ga.jspm.io/npm:@splidejs/splide@4.1.4/dist/css/splide.min.css"
 pin_all_from "app/javascript/controllers", under: "controllers"

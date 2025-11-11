@@ -1,14 +1,139 @@
-.landing
-  .landing-info
-    .landing-card
-      h1 Landing
-      p.small-text Find me in app/views/landing/index.html.slim
+.content-wrapper
+  .row.front-view.mt-2
+    .col-2
+      = image_tag 'profileImg.jpg', alt: 'Profile', class: 'profile-pic'
+      .green-circle-style
+      .spacing.row
+      .row.mx-2
+        ul
+          .row
+            .col-auto
+              = link_to 'https://github.com/bszarlowicz', target: '_blank' do
+                li.contacts
+                  b
+                    = fa_icon('github', class: "contact-icon")
+                  span
+                    i Github
+          .row
+            .col-auto
+              = link_to 'https://www.linkedin.com/in/bartosz-szarlowicz/', target: '_blank' do
+                li.contacts
+                  b
+                    = fa_icon('linkedin', class: "contact-icon")
+                  span
+                    i Linkedin
+          .row
+            .col-auto
+              .contact data-action="click->start-page#copyToClipboard" data-text="bsz.szarlowicz@gmail.com"
+                li.contacts
+                  b
+                    = fa_icon('envelope', class: "contact-icon")
+                  span
+                    i Send me an email!
 
-      - if user_signed_in?
-        p.small-text = "You are logged in as #{current_user.email}"
-        = button_to "Wyloguj", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary btn-sm"
-      - else
-        p.small-text You are not logged in.
-        = link_to t(:log_in), new_user_session_path, class: "btn btn-outline-secondary btn-sm"
+    .welcome-text-section.col-md-10.col-md-10
+      .spacing.row
+      .row
+        .main-header-welcome1.col-auto.mx-3
+          | Welcome,
+      .row
+        .main-header-welcome2.col-auto.mx-3
+          | I'm Bartosz Szarłowicz
+      .row
+        .main-header.col-auto.mx-3
+          | Fullstack Developer
+          = image_tag 'angleBrackets.png', alt: 'Angle Brackets', class: 'custom-img delayed-animation2'
+        .row
+          .main-header-description.col
+            | I am a dedicated web developer with over two years of commercial experience. My journey in the world of web development began with a passion for clean and efficient code.
+          .col-md-4
+    .row.mt-4
+      .col-md-12.text-center
+        a.bouncing-icon.custom-arrow href="#MyProjects" data-action="click->start-page#smoothScroll"
+          = fa_icon('angle-down')
+          span.arrow-description Check out my work
 
-    
+  / RegionHub
+  #RegionHub
+    .project-section
+      .row.mx-5
+        .green-dot-section
+          .green-dot-projects
+          .project-title
+            | Mentora
+      .row.mx-5
+        .col-1
+        .project-sub-title
+          | Demographic data of regions in Poland and the USA - extensive database with analysis
+
+      .row
+        .pic-column.col-md-8
+          .preview-cont data-controller="splide"
+            .preview-container
+              .preview-section#preview
+                .preview-header
+                  .action-dot-red
+                  .action-dot-yellow
+                  .action-dot-green
+                .splide
+                  .splide__track
+                    ul.splide__list
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_0.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_1.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_5.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_2.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_3.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_7.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_4.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_6.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_8.png"), class: "preview_image"
+                      li.splide__slide
+                        = image_tag asset_url("mentora_preview_9.png"), class: "preview_image"
+        .project-icon-area.col-auto.my-auto
+          .icon-container.p-2
+            .row
+              .col-md-12.py-2
+                | Technologies
+            .row
+              - @region_hub_icons.each do |icon|
+                .icon-wrapper.col-3.mx-auto
+                  = image_tag icon[:path], class: 'trichologist-description-icon'
+                  span.text-on-hover
+                    = icon[:text]
+                    - if icon[:version]
+                      p.text-on-hover-version= icon[:version]
+
+    .main-description-area.row
+      #descriptionRegionHub.description-section.col-md-6
+        menu.my-0
+          li
+            button.tab-button class=(@selected_topic_region_hub == 'about' ? 'active' : '') data-action="click->start-page#selectRegionHubTab" data-tab="about"
+              | About
+          li
+            button.tab-button class=(@selected_topic_region_hub == 'goal' ? 'active' : '') data-action="click->start-page#selectRegionHubTab" data-tab="goal"
+              | Goal
+          li
+            button.tab-button class=(@selected_topic_region_hub == 'algorithm' ? 'active' : '') data-action="click->start-page#selectRegionHubTab" data-tab="algorithm"
+              | Algorithm
+        .main-description-text.col-md-12.text-start data-region-hub-content=""
+          = @project_two[@selected_topic_region_hub.to_sym][:description]
+    .main-description-area-end-region-hub
+
+  footer.main-page-footer.w-100.text-end
+    .row.justify-content-between
+      .col-6.mt-1
+        .main-page-footer-text.px-2
+          | ©2025 Bartosz Szarłowicz
+      .col-6.mt-1.d-flex.align-items-center
+        .main-page-footer-text.px-2
+          | Credits:
+        = link_to 'Icons by Icons8', 'https://icons8.com', target: '_blank', class: 'main-page-footer-text'

@@ -1,3 +1,117 @@
 @import "base/colors.css.scss";
 
-@media only screen and (max-width: 850px) {}
+@media only screen and (max-width: 1300px) {
+  .project-icon-area {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pic-column {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description-section {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .content-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .spacing {
+    height: 5vh;
+  }
+
+  .welcome-text-section {
+    margin-top: 1vh;
+  }
+
+  .main-header {
+    font-size: 40px;
+  }
+
+  .custom-img {
+    margin-right: 30px;
+  }
+
+  .main-header-description {
+    font-size: 16px;
+  }
+  
+  .bottom-section-first {
+    margin-top: 20vh;
+    width: 100%;
+  }
+
+  .bottom-section-background-drag-and-drop-app {
+    width: 100%;
+  }
+
+  .project-title {
+    font-size: 25px;
+    margin-right: auto;
+  }
+
+  .green-dot-projects {
+    margin-left: 0;
+    width: 35px;
+    height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-sub-title {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .project-icon-area {
+    width: 75%;
+  }
+
+  menu button {
+    font-size: 21px;
+  }
+
+  .description-section {
+    max-width: 90vw;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .icon-container {
+    margin-bottom: 5vh;
+  }
+
+  .main-description-area {
+    margin: 0;
+  }
+
+  .main-description-area-end-trichologist {
+    height: 13vh;
+  }
+
+  .main-description-area-end-region-hub {
+    min-height: 13vh;
+  }
+
+  .main-description-area-end-delivery-app {
+    min-height: 13vh;
+  }
+
+  .main-description-area-end-drag-and-drop-app {
+    min-height: 13vh;
+  }
+
+  .development-team-header {
+    width: 100% !important;
+  }
+}
