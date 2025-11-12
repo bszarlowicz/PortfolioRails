@@ -1,5 +1,5 @@
 .content-wrapper
-  .row.front-view.mt-2
+  .row.front-view.pt-2
     .col-2
       = image_tag 'profileImg.jpg', alt: 'Profile', class: 'profile-pic'
       .green-circle-style
@@ -66,8 +66,8 @@
         .project-sub-title
           | Demographic data of regions in Poland and the USA - extensive database with analysis
 
-      .row
-        .pic-column.col-md-8
+      .project-display
+        .project-preview
           .preview-cont data-controller="splide"
             .preview-container
               .preview-section#preview
@@ -98,34 +98,34 @@
                         = image_tag asset_url("mentora_preview_8.png"), class: "preview_image"
                       li.splide__slide
                         = image_tag asset_url("mentora_preview_9.png"), class: "preview_image"
-        .project-icon-area.col-auto.my-auto
+        .project-icon-area
           .icon-container.p-2
             .row
-              .col-md-12.py-2
+              .col-md-12.py-2.icon-header
                 | Technologies
             .row
-              - @region_hub_icons.each do |icon|
+              - region_hub_icons.each do |icon|
                 .icon-wrapper.col-3.mx-auto
-                  = image_tag icon[:path], class: 'trichologist-description-icon'
+                  = image_tag icon[:path], class: 'project-icon-element'
                   span.text-on-hover
                     = icon[:text]
                     - if icon[:version]
                       p.text-on-hover-version= icon[:version]
 
     .main-description-area.row
-      #descriptionRegionHub.description-section.col-md-6
+      #descriptionRegionHub.description-section.col-md-6 data-controller="project-tabs" data-project-tabs-project-data-value=project_two_data.to_json
         menu.my-0
           li
-            button.tab-button class=(@selected_topic_region_hub == 'about' ? 'active' : '') data-action="click->start-page#selectRegionHubTab" data-tab="about"
+            button.tab-button class="#{@selected_topic_region_hub == 'about' ? 'active' : ''}" data-action="click->project-tabs#selectTab" data-tab="about"
               | About
           li
-            button.tab-button class=(@selected_topic_region_hub == 'goal' ? 'active' : '') data-action="click->start-page#selectRegionHubTab" data-tab="goal"
+            button.tab-button class="#{@selected_topic_region_hub == 'goal' ? 'active' : ''}" data-action="click->project-tabs#selectTab" data-tab="goal"
               | Goal
           li
-            button.tab-button class=(@selected_topic_region_hub == 'algorithm' ? 'active' : '') data-action="click->start-page#selectRegionHubTab" data-tab="algorithm"
+            button.tab-button class="#{@selected_topic_region_hub == 'algorithm' ? 'active' : ''}" data-action="click->project-tabs#selectTab" data-tab="algorithm"
               | Algorithm
-        .main-description-text.col-md-12.text-start data-region-hub-content=""
-          = @project_two[@selected_topic_region_hub.to_sym][:description]
+        .main-description-text.col-md-12.text-start data-project-tabs-target="content"
+          = project_two_data[@selected_topic_region_hub.to_sym][:description]
     .main-description-area-end-region-hub
 
   footer.main-page-footer.w-100.text-end

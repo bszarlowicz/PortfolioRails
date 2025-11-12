@@ -1,19 +1,17 @@
 @import "base/colors.css.scss";
 
 body {
-  background-image: url('backgroundGreen.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   background-color: $green-2-color !important;
   color: white !important;
   margin: 0;
-  height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
 }
 
 .front-view{
+  background-image: url('backgroundGreen.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -97,20 +95,113 @@ body {
   animation-delay: 2.1s;
 }
 
-.bottom-section-first {
-  margin-top: 53vh;
+.project-section {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2347b278' fill-opacity='1' d='M0,96L30,101.3C60,107,120,117,180,144C240,171,300,213,360,208C420,203,480,149,540,122.7C600,96,660,96,720,106.7C780,117,840,139,900,154.7C960,171,1020,181,1080,165.3C1140,149,1200,107,1260,96C1320,85,1380,107,1410,117.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  margin-top: 70px;
   position: relative;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2347b278' fillOpacity='1' d='M0,224L40,229.3C80,235,160,245,240,261.3C320,277,400,299,480,272C560,245,640,171,720,138.7C800,107,880,117,960,138.7C1040,160,1120,192,1200,176C1280,160,1360,96,1400,64L1440,32L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
   background-size: cover;
   background-position: center;
 }
 
-.project-section {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2347b278' fill-opacity='1' d='M0,96L30,101.3C60,107,120,117,180,144C240,171,300,213,360,208C420,203,480,149,540,122.7C600,96,660,96,720,106.7C780,117,840,139,900,154.7C960,171,1020,181,1080,165.3C1140,149,1200,107,1260,96C1320,85,1380,107,1410,117.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-  margin-top: 100px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
+.project-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .project-preview {
+    width: 60%;
+    .preview-cont {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+
+      .preview-container {
+        height: 550px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-left: 85px;
+        padding-right: 20px;
+        
+        .preview-section {
+          margin: 30px 0;
+          display: flex;
+          flex-direction: column;
+          max-width: 850px;
+          height: 420px;
+          background-color: $main-site-background-color;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          border-radius: 10px;
+          z-index: 500;
+          
+          .preview-header {
+            background-color: rgba(24, 33, 35, 0.8);
+            display: flex; 
+            align-items: center;
+            min-height: 36px;
+            max-height: 36px;
+            width: 100%;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            border-bottom: 1px solid rgba(13, 18, 19, 0.8);
+            padding-left: 20px;
+            gap: 10px;
+            
+            .action-dot-red, 
+            .action-dot-green, 
+            .action-dot-yellow {
+              aspect-ratio: 1 / 1;
+              border-radius: 100%;
+              width: 10px;
+              height: 10px;
+            }
+      
+            .action-dot-green {
+              background-color: #34c759;
+            }
+      
+            .action-dot-red {
+              background-color: #ff3b30;
+            }
+      
+            .action-dot-yellow {
+              background-color: #fc0;
+            }
+          }
+      
+          .preview_image {
+            width: 100%;
+            height: 100%;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+  
+  .project-icon-area {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon-container {
+      max-width: 320px;
+      background: linear-gradient(to top right, $green-1-color, $green-2-color, $green-2-color, $green-1-color, $green-0-color);
+      border-radius: 12px;
+      color: $green-4-color;
+      font-weight: 600;
+      font-size: 24px;
+
+      .icon-header{
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 22px;
+      }
+    }
+  }
 }
 
 .bottom-section-background-delivery-app {
@@ -269,7 +360,7 @@ li.contacts:hover span {
 .project-sub-title {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   margin-left: 78px;
 }
 
@@ -282,9 +373,9 @@ li.contacts:hover span {
   margin: 0 20px;
 }
 
-.trichologist-description-icon {
-  width: 45px;
-  height: 45px;
+.project-icon-element {
+  width: 35px;
+  height: 35px;
   margin: 10px 0px;
   animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -307,7 +398,7 @@ li.contacts:hover span {
   font-size: 10px;
 }
 
-.icon-wrapper:hover .trichologist-description-icon {
+.icon-wrapper:hover .project-icon-element {
   animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
@@ -316,21 +407,17 @@ li.contacts:hover span {
   animation-delay: 0.4s;
 }
 
-.icon-container {
-  background: linear-gradient(to top right, $green-1-color, $green-2-color, $green-2-color, $green-1-color, $green-0-color);
-  border-radius: 12px;
-  margin-bottom: 15vh;
-  color: $green-4-color;
-  font-weight: 600;
-  font-size: 24px;
-}
-
 .main-description-area {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 35px;
   background-color: $green-3-color;
-  min-height: 290px;
+
+  .main-description-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 20px;
+    background-color: $green-4-color;
+    border-radius: 0 12px 12px 12px;
+  }
 }
 
 .description-section {
@@ -366,14 +453,6 @@ li.contacts:hover span {
   min-height: 40vh;
 }
 
-.main-description-text {
-  font-family: 'Euclid', sans-serif;
-  font-size: 18px;
-  padding: 20px;
-  background-color: $green-4-color;
-  border-radius: 0 12px 12px 12px;
-}
-
 menu {
   margin: 1rem 0;
   padding: 0;
@@ -389,7 +468,7 @@ menu button {
   border-radius: 12px 12px 0 0;
   background-color: transparent;
   color: white;
-  font-size: 35px;
+  font-size: 24px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -474,64 +553,6 @@ menu button.active {
   font-size: 14px;
 }
 
-.preview-container{
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .preview-section{
-    margin: 30px 0;
-    display: flex;
-    flex-direction: column;
-    max-width: 850px;
-    height: 420px;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    z-index: 500;
-    background-color: $main-site-background-color;
-    .preview-header{
-      background-color: rgba(24, 33, 35, 0.8);
-      display: flex; 
-      align-items: center;
-      min-height: 36px;
-      max-height: 36px;
-      width: 100%;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
-      border-bottom: 1px solid rgba(13, 18, 19, 0.8);
-      padding-left: 20px;
-      gap: 10px;
-      .action-dot-red, .action-dot-green, .action-dot-yellow{
-        aspect-ratio: 1 / 1;
-        border-radius: 100%;
-        width: 10px;
-        height: 10px;
-      }
-
-      .action-dot-green{
-        background-color: #34c759;
-      }
-
-      .action-dot-red{
-        background-color: #ff3b30;
-      }
-
-      .action-dot-yellow{
-        background-color: #fc0;
-      }
-    }
-
-    .preview_image{
-      width: 100%;
-      height: 100%;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-  }
-}
-
 .splide{
   width: 100%;
   height: 92%;
@@ -580,11 +601,4 @@ menu button.active {
   .splide__pagination__page:hover {
     background-color: $green-5-color; /* Kolor kropki po najechaniu */
   }
-}
-
-.preview-cont{
-  display: flex;
-  gap: 50px;
-  justify-content: center;
-  align-items: center;
 }

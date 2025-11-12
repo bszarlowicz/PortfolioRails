@@ -6,9 +6,16 @@
     margin-right: auto;
   }
 
-  .pic-column {
+  .project-preview {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .project-display{
+    flex-direction: column;
+    .preview-container{
+      padding: 0 !important;
+    }
   }
 
   .description-section {
@@ -42,11 +49,6 @@
 
   .main-header-description {
     font-size: 16px;
-  }
-  
-  .bottom-section-first {
-    margin-top: 20vh;
-    width: 100%;
   }
 
   .bottom-section-background-drag-and-drop-app {
@@ -96,19 +98,19 @@
   }
 
   .main-description-area-end-trichologist {
-    height: 13vh;
+    height: 180px;
   }
 
   .main-description-area-end-region-hub {
-    min-height: 13vh;
+    height: 180px;
   }
 
   .main-description-area-end-delivery-app {
-    min-height: 13vh;
+    height: 180px;
   }
 
   .main-description-area-end-drag-and-drop-app {
-    min-height: 13vh;
+    height: 180px;
   }
 
   .development-team-header {
