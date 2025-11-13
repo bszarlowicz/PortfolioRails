@@ -1,0 +1,17 @@
+/ Parameters:
+/ - images: Array of image names
+
+.project-preview
+  .preview-cont data-controller="splide"
+    .preview-container
+      .preview-section#preview
+        .preview-header
+          .action-dot-red
+          .action-dot-yellow
+          .action-dot-green
+        .splide
+          .splide__track
+            ul.splide__list
+              - images.each do |image|
+                li.splide__slide
+                  = image_tag asset_url(image), class: "preview_image"

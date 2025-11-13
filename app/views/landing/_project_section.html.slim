@@ -1,0 +1,25 @@
+/ Parameters:
+/ - project_id: Section ID
+/ - project_title: Project title
+/ - project_subtitle: Project subtitle/description
+/ - preview_images: Array of preview image names
+/ - technologies: Array of technology icons (from helper)
+/ - tabs_data: Hash with tab data (from helper)
+/ - selected_tab: Active tab
+/ - links: Array of links (github, pdf, demo)
+/ - wave_top: SVG pattern for top wave
+/ - wave_bottom: SVG pattern for bottom wave
+
+div id=project_id
+  .project-section style=("background-image: url(#{wave_top}); background-size: 1200px 100%; background-repeat: repeat-x; background-position: 0 0; animation: wave-flow 20s linear infinite;")
+    = render 'landing/project/header', title: project_title, subtitle: project_subtitle
+    
+    .project-display
+      = render 'landing/project/preview', images: preview_images
+      = render 'landing/project/technologies', technologies: technologies
+    
+    .main-description-area.row
+      = render 'landing/project/tabs', project_id: project_id.downcase, tabs_data: tabs_data, selected_tab: selected_tab
+      = render 'landing/project/links', links: links
+    
+  .main-description-area-end style=("background-image: url(#{wave_bottom}); background-size: 1200px 100%; background-repeat: repeat-x; background-position: 0 0; animation: wave-flow-reverse 15s linear infinite;")

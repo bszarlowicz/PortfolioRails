@@ -1,5 +1,5 @@
 class LandingController < ApplicationController
   def index
-    @selected_topic_region_hub = params[:region_hub_tab] || 'about'
+    @selected_topic_mentora = params[:region_hub_tab] || 'about'
   end
 end

@@ -106,3 +106,33 @@
     opacity: 1;
   }
 }
+
+@keyframes wave-morph-1 {
+  0%, 100% {
+    transform: translateX(0) scale(1, 1);
+  }
+  33% {
+    transform: translateX(2%) scale(1.02, 0.98);
+  }
+  66% {
+    transform: translateX(-2%) scale(0.98, 1.02);
+  }
+}
+
+@keyframes wave-flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+@keyframes wave-flow-reverse {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1200px 0;
+  }
+}

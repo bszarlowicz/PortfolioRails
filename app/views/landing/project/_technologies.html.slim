@@ -1,0 +1,16 @@
+/ Parameters:
+/ - technologies: Array of hashes
+
+.project-icon-area
+  .icon-container.p-2
+    .row
+      .col-md-12.py-2.icon-header
+        | Technologies
+    .row
+      - technologies.each do |icon|
+        .icon-wrapper.col-3.mx-auto
+          = image_tag icon[:path], class: 'project-icon-element'
+          span.text-on-hover
+            = icon[:text]
+            - if icon[:version]
+              p.text-on-hover-version= icon[:version]
