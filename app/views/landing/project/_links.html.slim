@@ -1,16 +1,29 @@
 / Parameters:
-/ - links: Array of hashes { type:, url:, text:, sub_text: }
+/ - links: Array of hashes { icon:, url:, text:, sub_text:, file: }
 
 .col-md-5.additional-links
   - links.each do |link|
-    .icon-element class="#{link[:sub_text] ? 'with-sub-description' : ''}"
-      .icon
-        = fa_icon(link[:icon])
-      .description
-        - if link[:url]
-          a href=link[:url] target="_blank" class="text"
-            = link[:text]
-        - else
+    - if link[:url]
+      a href=link[:url] target="_blank" class="icon-element #{link[:sub_text] ? 'with-sub-description' : ''}"
+        .icon
+          = fa_icon(link[:icon])
+        .description
           .text= link[:text]
-        - if link[:sub_text]
-          .sub-description= link[:sub_text]
+          - if link[:sub_text]
+            .sub-description= link[:sub_text]
+    - elsif link[:file]
+      = link_to link[:file], target: "_blank", class: "icon-element #{link[:sub_text] ? 'with-sub-description' : ''}" do
+        .icon
+          = fa_icon(link[:icon])
+        .description
+          .text= link[:text]
+          - if link[:sub_text]
+            .sub-description= link[:sub_text]
+    - else
+      .icon-element class="#{link[:sub_text] ? 'with-sub-description' : ''}"
+        .icon
+          = fa_icon(link[:icon])
+        .description
+          .text= link[:text]
+          - if link[:sub_text]
+            .sub-description= link[:sub_text]

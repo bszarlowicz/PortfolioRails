@@ -32,7 +32,7 @@
                     i Send me an email!
 
     .welcome-text-section.col-md-10.col-md-10
-      .spacing.row
+      .spacing.header-section.row
       .row
         .main-header-welcome1.col-auto.mx-3
           | Welcome,
@@ -47,13 +47,14 @@
           .main-header-description.col
             | I am a dedicated web developer with over two years of commercial experience. My journey in the world of web development began with a passion for clean and efficient code.
           .col-md-4
-    .row.mt-4
-      .col-md-12.text-center
-        a.bouncing-icon.custom-arrow href="#MyProjects" data-action="click->start-page#smoothScroll"
+    .row.p-0
+      .col-md-12.text-center.p-0
+        a.bouncing-icon.custom-arrow href="#projects" data-action="click->start-page#smoothScroll"
           = fa_icon('angle-down')
           span.arrow-description Check out my work
 
-  = render 'landing/project_section', **mentora_project(@selected_topic_mentora)
+  #projects
+    = render 'landing/project_section', **mentora_project(@selected_topic_mentora)
 
   footer.main-page-footer.w-100.text-end
     .row.justify-content-between

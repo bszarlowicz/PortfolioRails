@@ -10,8 +10,8 @@
 / - wave_top: SVG pattern for top wave
 / - wave_bottom: SVG pattern for bottom wave
 
-div id=project_id
-  .project-section style=("background-image: url(#{wave_top}); background-size: 1200px 100%; background-repeat: repeat-x; background-position: 0 0; animation: wave-flow 20s linear infinite;")
+div.project-wrapper id="#{project_id}"
+  .project-section style=("background-image: url(#{wave_top}); background-size: 1200px 75%; background-repeat: repeat-x; animation: wave-flow 20s linear infinite;")
     = render 'landing/project/header', title: project_title, subtitle: project_subtitle
     
     .project-display

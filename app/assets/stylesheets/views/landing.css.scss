@@ -96,14 +96,18 @@ body {
 }
 
 .project-section {
-  margin-top: 70px;
   position: relative;
+}
+
+.project-wrapper:first-of-type .project-section {
+  padding-top: 70px;
 }
 
 .project-display {
   display: flex;
   align-items: center;
   justify-content: center;
+  
   .project-preview {
     width: 60%;
     .preview-cont {
@@ -187,6 +191,7 @@ body {
     align-items: center;
     .icon-container {
       max-width: 320px;
+      min-width: 280px;
       background: linear-gradient(to top right, $green-1-color, $green-2-color, $green-2-color, $green-1-color, $green-0-color);
       border-radius: 12px;
       color: $green-4-color;
@@ -422,6 +427,10 @@ li.contacts:hover span {
     align-items: center;
     justify-content: center;
     gap: 50px;
+
+    a{
+      text-decoration: none !important;
+    }
   
     .icon-element {
       display: flex;
@@ -430,10 +439,6 @@ li.contacts:hover span {
       align-items: center;
       justify-content: start;
       cursor: pointer;
-
-      a{
-        text-decoration: none !important;
-      }
 
       &.with-sub-description{
         padding-top: 17px;
@@ -451,11 +456,13 @@ li.contacts:hover span {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: max-content;
         .text{
           font-family: 'Lato', sans-serif;
           font-size: 12px;
           font-weight: 400;
           color: $green-5-color;
+          text-align: center;
         }
       }
       
@@ -575,8 +582,9 @@ menu button.active {
 .main-page-footer-text {
   color: #b5ecb8;
   text-decoration: none;
-  font-family: 'Euclid', sans-serif;
-  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
 }
 
 .splide{

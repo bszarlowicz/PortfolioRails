@@ -4,6 +4,18 @@
   .project-icon-area {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .main-description-area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .additional-links{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
   }
 
   .project-preview {
@@ -40,12 +52,14 @@
   }
 
   .main-header {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .custom-img {
     margin-right: 30px;
+    width: 100px;
   }
+
 
   .main-header-description {
     font-size: 16px;
@@ -60,8 +74,21 @@
     margin-right: auto;
   }
 
+  .green-dot-section{
+    margin-bottom: 5px;
+    padding-left: 0 !important;
+    align-items: end;
+    justify-content: center;
+  }
+
+  .project-header{
+    margin-left: 19.5px !important;
+    margin-right: 0 !important;
+  }
+
   .green-dot-projects {
-    margin-left: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     width: 35px;
     height: 35px;
     margin-left: auto;
@@ -69,13 +96,50 @@
   }
 
   .project-sub-title {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    padding-left: 60px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: start;
+    font-size: 11px;
+  }
+
+  .project-preview {
+    width: 100%;
+  }
+
+  .preview-container{
+    height: unset !important;
+    max-height: 550px !important;
+    min-height: 380px !important;
+  }
+
+  .preview-section {
+    max-width: 550px !important;
+    min-width: 350px !important;
+    height: 200px !important;
+  }
+
+  .splide__pagination{
+    right: -25px;
+  }
+
+  .splide__pagination--ttb{
+    padding: 0.5rem 0 !important;
+  }
+
+  .splide__pagination__page {
+    height: 6px !important;
+    width: 6px !important;
+    margin: 0 !important;
   }
 
   .project-icon-area {
     width: 75%;
+    margin-bottom: 20px;
+  }
+
+  .additional-links{
+    gap: 20px !important;
   }
 
   menu button {
@@ -99,5 +163,21 @@
 
   .development-team-header {
     width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .additional-links {
+    flex-wrap: wrap;
+    .icon-element {
+      flex: 0 0 calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+  }
+  .spacing.header-section.row{
+    display: none;
+  }
+  .splide__pagination{
+    right: -12px !important;
   }
 }

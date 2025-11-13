@@ -2,11 +2,12 @@ doctype html
 html
   head
     title
-      | Omen
+      | Welcome!
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = favicon_link_tag "favicon.svg"
     link[href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet"]
     = javascript_importmap_tags
   body
