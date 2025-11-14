@@ -83,3 +83,4 @@ gem "sassc-rails"
 gem "devise"
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'dotenv-rails'
+gem 'administrate'

@@ -1,4 +1,5 @@
 .content-wrapper
+  = link_to "Admin Panel", admin_root_path, class: "admin-link" if user_signed_in?
   .row.front-view.pt-2
     .col-2
       = link_to new_user_session_path do
@@ -59,7 +60,7 @@
 
   footer.main-page-footer.w-100.text-end
     .row.justify-content-between
-      - unless current_user.present?
+      - unless user_signed_in?
         .col-6.mt-1
           .main-page-footer-text.px-2
             | ©2025 Bartosz Szarłowicz
