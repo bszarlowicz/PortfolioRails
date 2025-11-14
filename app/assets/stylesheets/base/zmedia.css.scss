@@ -164,26 +164,7 @@
   .development-team-header {
     width: 100% !important;
   }
-}
-
-@media (max-width: 480px) {
-  .additional-links {
-    flex-wrap: wrap;
-    .icon-element {
-      flex: 0 0 calc(50% - 10px);
-      max-width: calc(50% - 10px);
-    }
-  }
-  .spacing.header-section.row{
-    display: none;
-  }
-  .splide__pagination{
-    right: -12px !important;
-  }
-}
-
-// Responsywność
-@media (max-width: 768px) {
+  
   div.notice, div.alert {
     top: 1rem;
     left: 1rem;
@@ -191,6 +172,39 @@
     transform: none;
     max-width: calc(100% - 2rem);
     min-width: auto;
+  }
+
+  .admin-floating-menu {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    transform: none;
+    
+    &.collapsed {
+      right: 20px;
+      bottom: -300px;
+      
+      .admin-menu-toggle {
+        right: 0;
+        bottom: 300px;
+      }
+    }
+  }
+  
+  .admin-menu-toggle {
+    right: 0;
+    bottom: 260px;
+    top: auto;
+    transform: none;
+    border-radius: 50% 50% 0 0;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .admin-menu-content {
+    border-radius: 12px 12px 0 0;
+    border-right: 1px solid rgba(71, 178, 120, 0.3);
+    border-bottom: none;
   }
   
   @keyframes slideDown {
@@ -213,5 +227,21 @@
       opacity: 0;
       transform: translateY(-20px);
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .additional-links {
+    flex-wrap: wrap;
+    .icon-element {
+      flex: 0 0 calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+  }
+  .spacing.header-section.row{
+    display: none;
+  }
+  .splide__pagination{
+    right: -12px !important;
   }
 }

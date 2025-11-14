@@ -1,0 +1,136 @@
+@import "base/colors.css.scss";
+
+.admin-floating-menu {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9998;
+  transition: all 0.3s ease;
+  
+  &.collapsed {
+    right: -240px;
+    
+    .admin-menu-toggle {
+      right: 240px;
+    }
+  }
+  
+  &.hidden {
+    display: none;
+  }
+}
+
+.admin-menu-toggle {
+  position: absolute;
+  right: 260px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 50px;
+  height: 50px;
+  
+  background: rgba(71, 178, 120, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50% 0 0 50%;
+  border-right: none;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+  
+  .admin-toggle-icon {
+    color: white;
+    font-size: 20px;
+    animation: spin 3s linear infinite;
+  }
+  
+  &:hover {
+    background: rgba(71, 178, 120, 1);
+    transform: translateY(-50%) scale(1.05);
+    
+    .admin-toggle-icon {
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+.admin-menu-content {
+  width: 260px;
+  
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(71, 178, 120, 0.3);
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  
+  padding: 1.5rem 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.admin-menu-header {
+  padding: 0 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  
+  .admin-icon {
+    font-size: 24px;
+    color: $green-4-color;
+  }
+  
+  .admin-email {
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    word-break: break-word;
+  }
+}
+
+.admin-menu-divider {
+  height: 1px;
+  background: rgba(71, 178, 120, 0.2);
+  margin: 0 1rem;
+}
+
+.admin-menu-items {
+  padding: 1rem 0;
+}
+
+.admin-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  
+  transition: all 0.2s ease;
+  
+  i {
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+    color: $green-4-color;
+  }
+  
+  &:hover {
+    background: rgba(71, 178, 120, 0.1);
+    color: $green-4-color;
+    padding-left: 2rem;
+  }
+}

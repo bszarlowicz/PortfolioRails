@@ -1,0 +1,20 @@
+- if user_signed_in?
+  .admin-floating-menu class=(params[:hide_admin_menu] ? 'hidden' : '')
+    .admin-menu-toggle data-controller="admin-menu" data-action="click->admin-menu#toggle"
+      = fa_icon('cog', class: 'admin-toggle-icon')
+    
+    .admin-menu-content
+      .admin-menu-header
+        = fa_icon('user-circle', class: 'admin-icon')
+        span.admin-email = current_user.email
+      
+      .admin-menu-divider
+      
+      .admin-menu-items
+        = link_to admin_root_path, class: 'admin-menu-item' do
+          = fa_icon('dashboard')
+          span Admin Panel
+        
+        = link_to destroy_user_session_path, data: { turbo_method: :delete }, class: 'admin-menu-item' do
+          = fa_icon('sign-out')
+          span Log out

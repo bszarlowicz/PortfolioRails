@@ -1,5 +1,4 @@
 .content-wrapper
-  = link_to "Admin Panel", admin_root_path, class: "admin-link" if user_signed_in?
   .row.front-view.pt-2
     .col-2
       = link_to new_user_session_path do
@@ -60,22 +59,10 @@
 
   footer.main-page-footer.w-100.text-end
     .row.justify-content-between
-      - unless user_signed_in?
-        .col-6.mt-1
-          .main-page-footer-text.px-2
-            | ©2025 Bartosz Szarłowicz
-        .col-6.mt-1.d-flex.align-items-center
-          .main-page-footer-text.px-2
-            | Credits:
-          = link_to 'Icons by Icons8', 'https://icons8.com', target: '_blank', class: 'main-page-footer-text'
-      - else
-        .col-4.mt-1.text-center
-          .main-page-footer-text.px-2
-            | ©2025 Bartosz Szarłowicz
-        .col-4.mt-1.d-flex.align-items-center.justify-content-center
-          .main-page-footer-text.px-2
-            | Credits:
-          = link_to 'Icons by Icons8', 'https://icons8.com', target: '_blank', class: 'main-page-footer-text'
-        .col-4.mt-1.text-center
-          .main-page-footer-text.px-2
-            = link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }
+      .col-6.mt-1
+        .main-page-footer-text.px-2
+          | ©2025 Bartosz Szarłowicz
+      .col-6.mt-1.d-flex.align-items-center
+        .main-page-footer-text.px-2
+          | Credits:
+        = link_to 'Icons by Icons8', 'https://icons8.com', target: '_blank', class: 'main-page-footer-text'
