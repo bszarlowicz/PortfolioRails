@@ -1,10 +1,5 @@
 class ReviewsController < ApplicationController
 
-  # GET /reviews or /reviews.json
-  def index
-    @reviews = Review.all
-  end
-
   # GET /reviews/new
   def new
     @review = Review.new
@@ -16,8 +11,11 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: "Review was successfully created." }
-        format.json { render :show, status: :created, location: @review }
+        flash[:notice] = flash_message(:create, Review)
+        format.turbo_stream
+        format.html { redirect_to root_path }
+        format.json { redirect_to root_path }
+        flash.discard
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @review.errors, status: :unprocessable_entity }

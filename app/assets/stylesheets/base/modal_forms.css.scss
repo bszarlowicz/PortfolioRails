@@ -1,0 +1,127 @@
+@import "base/colors.css.scss";
+
+form.modal-form{
+  width: 100%;
+  min-width: 380px;
+
+  .input, .custom-input{
+    background-color: $main-site-background-color;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    padding: 3px;
+    padding-top: 0;
+
+    label, .custom-input-label{
+      font-size: 13px;
+      padding-left: 5px;
+      padding-top: 2px;
+      color: $text-grey;
+
+      abbr[title]{
+        display: none !important;
+      }
+    }
+  }
+
+  textarea{
+    margin-top: 2px !important;
+    width: 100% !important;
+    border: none;
+    border-radius: 9px;
+  }
+
+  input, select{
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0;
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  input#lesson_teacher_file{
+    background-color: red;
+  }
+
+  select {
+    option:first-child {
+      color: #767676 !important;
+    }
+  }
+
+  input:focus, select:focus{
+    border-color: $orange-4-color;
+    outline: none !important;
+  }
+
+  .form-alert{
+    font-size: 12px;
+    color: red;
+  }
+
+  .action-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .user-avatar-preview{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+#modal{
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-form-card{
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1000;
+    padding: 2em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
+    animation: scale-in-center 0.3s;
+
+    .modal-form-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    .close-link{
+      text-decoration: none;
+      color: #aeaeae;
+      font-size: 16px;
+      
+      &:hover{
+        color: #7e7e7e;
+      }
+    }
+    
+  }
+}

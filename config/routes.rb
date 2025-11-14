@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show, :edit, :update]
-  resources :reviews, only: [:index, :new, :create]
+  resources :reviews, only: [:new, :create]
 
   # Defines the root path route ("/")
   root 'landing#index'
