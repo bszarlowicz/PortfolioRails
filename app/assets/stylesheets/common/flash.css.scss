@@ -1,81 +1,68 @@
 @import "base/colors.css.scss";
 
-body#sessions{
-  div.notice, div.alert{
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 15px;
-  }
-}
-
-.flash-background{
-  padding-bottom: 30px;
-}
-
-div.notice, div.alert{
-  padding: 10px 20px;
+div.notice, div.alert {
+  padding: 1rem 1.5rem;
   color: white;
-  font-size: 15px;
-  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  
+  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  min-width: min-content;
-  max-width: 440px;
-
+  gap: 1rem;
+  
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  
   position: fixed;
-  top: 70px;
+  top: 2rem;
   left: 50%; 
-  transform: translateX(-50%); 
-  z-index: 1000;
-
-  .close-cont{
-    padding-left: 20px;
-    a{
-        color: white;
-        &:hover{
-            color: darken(white, 10%);
-        }
+  transform: translateX(-50%);
+  z-index: 9999;
+  
+  min-width: 300px;
+  max-width: 500px;
+  
+  animation: slideDown 0.4s ease-out;
+  
+  .close-cont {
+    flex-shrink: 0;
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      opacity: 0.8;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
     }
-}
-
-  &.notifications {
-      background-color: #ffb420;
-      .avatar-form {
-          border-radius: 50%;
-          margin: 0
-      }
-      .notification-row {
-          width: 100%;
-      }
-      .date {
-          padding-top: 10px;
-      }
   }
-
 }
 
-div.notice{ 
-  background-color: #56A061; 
+div.notice { 
+  background: rgba(71, 178, 120, 0.85);
+  
+  &:hover {
+    background: rgba(71, 178, 120, 0.9);
+  }
 }
 
-div.alert{ 
-  background-color: #F23838;
-}
-
-@-moz-keyframes fadeOut {
-  from {opacity:1;}
-  to {opacity:0;}
-}
-
-@-webkit-keyframes fadeOut {
-  from {opacity:1;}
-  to {opacity:0;}
-}
-
-@keyframes fadeOut {
-  from {opacity:1;}
-  to {opacity:0;}
+div.alert { 
+  background: rgba(242, 56, 56, 0.85);
+  
+  &:hover {
+    background: rgba(242, 56, 56, 0.9);
+  }
 }

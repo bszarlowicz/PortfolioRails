@@ -1,6 +1,10 @@
-.login-section
-  .login-card
-    h2 Log in
-    .main-form
-      = render "form"
-    = render "devise/shared/links"
+.login-wrapper
+  .login-section
+    .login-card
+      .login-header
+        h2 Log in
+        = fa_icon("user-circle")
+      .main-form
+        = render "form"
+  
+  .wave-bottom style=("background-image: url(#{login_wave_pattern}); background-size: 1200px 100%; background-repeat: repeat-x; background-position: 0 0; animation: wave-flow 20s linear infinite;")
