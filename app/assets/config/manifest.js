@@ -6,3 +6,5 @@
 //= link jquery.min.js
 //= link jquery_ujs.js
 //= link select2.js
+
+//= link administrate-field-active_storage/application.css

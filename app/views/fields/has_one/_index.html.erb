@@ -1,0 +1,6 @@
+<% if field.resource.reviewer_profile.attached? %>
+  <%= image_tag field.resource.reviewer_profile, 
+                style: 'width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid #47b278;' %>
+<% else %>
+  <span class="text-muted">-</span>
+<% end %>

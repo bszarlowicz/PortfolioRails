@@ -11,8 +11,8 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     email: Field::String,
     name: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(format: "%d-%m-%Y %H:%M"),
+    updated_at: Field::DateTime.with_options(format: "%d-%m-%Y %H:%M"),
     password: Field::Password,
     password_confirmation: Field::Password,
   }.freeze
