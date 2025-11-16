@@ -4,7 +4,7 @@
 
   .form-inputs
     .image-upload-section data-controller="image-preview"
-      label.custom-input-label Show your smile!
+      label.custom-input-label Show your smile
       label.image-preview-container for="review_reviewer_profile"
         = image_tag "", class: "image-preview hidden", data: { image_preview_target: "preview" }
         .upload-placeholder data-image-preview-target="placeholder"
@@ -26,4 +26,7 @@
       = f.input :worked_with_me
 
   .action-buttons
-    = f.button :submit, class: "submit-button mt-2", data: { turbo: true }
+    button.submit-button.mt-2 type="submit" data-turbo="true"
+      = t('helpers.submit.review.create')
+      = ' '
+      = fa_icon('paper-plane-o')

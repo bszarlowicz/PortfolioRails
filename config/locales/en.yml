@@ -173,6 +173,8 @@ en:
       prompt: Please select
     submit:
       create: Create
+      review:
+        create: "Send your review"
       submit: Save
       update: Update
 
