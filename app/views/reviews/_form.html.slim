@@ -21,7 +21,12 @@
         = f.input :reviewer_surname
     = f.input :description
     = f.input :cooperation_type, as: :select, collection: Review::COOPERATION_TYPES.map { |type| [I18n.t("cooperation_types.#{type}"), type] }
-    = f.input :overall_rating
+    .star-rating-input data-controller="star-rating" data-star-rating-rating-value="#{f.object.overall_rating.to_i}"
+      label.custom-input-label = Review.human_attribute_name(:overall_rating)
+      .review-rating
+        - 5.times do |i|
+          = fa_icon('star-o', class: 'star-empty', data: { star_rating_target: 'star', rating: i + 1, action: 'mouseenter->star-rating#hover mouseleave->star-rating#leave click->star-rating#select' })
+      = f.hidden_field :overall_rating, data: { star_rating_target: 'input' }
     .review-checkbox
       = f.input :worked_with_me
 
