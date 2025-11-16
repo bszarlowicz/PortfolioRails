@@ -1,0 +1,33 @@
+- if @reviews.present?
+  .row.g-4
+    - @reviews.each_with_index do |review, index|
+      .col-md-6.col-lg-4
+        .review-card data-controller="intersection" data-intersection-animation-class="slide-up-fade-in" data-intersection-delay-value="#{index * 50}"
+          .review-header
+            - if review.reviewer_profile.attached?
+              = image_tag review.reviewer_profile, alt: review.full_name, class: 'reviewer-avatar'
+            - else
+              .reviewer-avatar-placeholder
+                = review.reviewer_name[0] + review.reviewer_surname[0]
+            .reviewer-info
+              h4.reviewer-name = review.full_name
+              p.cooperation-type = review.cooperation_type
+          
+          .review-rating
+            - 5.times do |i|
+              - if i < review.overall_rating
+                = fa_icon('star', class: 'star-filled')
+              - else
+                = fa_icon('star', class: 'star-empty')
+          
+          .review-body
+            p.review-description = review.description
+          
+          - if review.worked_with_me
+            .review-badge
+              = fa_icon('check-circle')
+              span Worked together
+- else
+  .row
+    .col-12.text-center
+      p.no-reviews = "No reviews yet :("

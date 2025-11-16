@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  
   has_one_attached :reviewer_profile
   
   validates :reviewer_name, presence: true
@@ -13,6 +14,8 @@ class Review < ApplicationRecord
                                size: { less_than: 5.megabytes }
 
   scope :visible, -> { where(visible: true) }
+
+  COOPERATION_TYPES = %w[friend work_colleague university_colleague employer client business_partner]
   
   def full_name
     "#{reviewer_name} #{reviewer_surname}"

@@ -35,15 +35,23 @@ en:
       review:
         reviewer_name: Name
         reviewer_surname: Surname
-        description: Tells about our collaboration
+        description: Write your thoughts about me or my work
         worked_with_me: Have you worked with me?
-        cooperation_type: Type of cooperation
-        overall_rating: Overall rating (0-5)
+        cooperation_type: Our relationship
+        overall_rating: How would you rate me? (0-5)
 
   log_in: Log in
 
   roles:
     admin: Administrator
+  
+  cooperation_types:
+    friend: "Friend"
+    work_colleague: "Coworker"
+    university_colleague: "University Colleague"
+    employer: "Employer"
+    client: "Client"
+    business_partner: "Business Partner"
 
   notices:
     create:
