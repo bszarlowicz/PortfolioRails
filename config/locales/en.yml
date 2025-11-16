@@ -21,6 +21,9 @@ en:
       user:
         one: "User"
         other: "Users"
+      review:
+        one: "Review"
+        other: "Reviews"
 
     attributes:
       user:
@@ -29,6 +32,13 @@ en:
         password_confirmation: "Confirm password"
         name: "Name"
         phone: "Phone"
+      review:
+        reviewer_name: Name
+        reviewer_surname: Surname
+        description: Tells about our collaboration
+        worked_with_me: Have you worked with me?
+        cooperation_type: Type of cooperation
+        overall_rating: Overall rating (0-5)
 
   log_in: Log in
 

@@ -5,66 +5,178 @@ form.modal-form{
   min-width: 380px;
 
   .input, .custom-input{
-    background-color: $main-site-background-color;
+    background-color: transparent;
     margin-bottom: 10px;
-    border-radius: 9px;
-    padding: 3px;
-    padding-top: 0;
+    border-radius: 0;
+    padding: 0;
 
     label, .custom-input-label{
       font-size: 13px;
-      padding-left: 5px;
-      padding-top: 2px;
-      color: $text-grey;
+      padding-left: 0;
+      padding-bottom: 8px;
+      display: block;
+      color: $green-0-color;
+      font-weight: 500;
+      font-family: 'Lato', sans-serif;
 
       abbr[title]{
         display: none !important;
       }
     }
+
+    label.boolean{
+      display: flex;
+      align-items: center;
+    }
   }
 
   textarea{
-    margin-top: 2px !important;
     width: 100% !important;
     border: none;
-    border-radius: 9px;
+    border-bottom: 1px solid rgba(71, 178, 120, 0.25);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 8px;
+    font-size: 13px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(71, 178, 120, 0.4);
+      font-weight: 300;
+    }
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-bottom: 3px solid rgba(71, 178, 120, 0.8);
+      padding-bottom: 8px;
+      outline: none;
+    }
+
+    &:hover:not(:focus) {
+      border-bottom-color: rgba(71, 178, 120, 0.5);
+    }
   }
 
   input, select{
-    border: 1px solid white;
-    border-radius: 6px;
-    background-color: white;
-    padding: 5px;
-    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid rgba(71, 178, 120, 0.25);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 8px;
     width: 100%;
     margin: 0;
-    font-size: 15px;
+    font-size: 13px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(71, 178, 120, 0.4);
+      font-weight: 300;
+    }
   }
 
-  input#lesson_teacher_file{
-    background-color: red;
+  input[type="checkbox"] {
+    appearance: none;
+    width: 24px !important;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    
+    background: transparent;
+    border: 2px solid rgba(71, 178, 120, 0.4);
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+      border-color: rgba(71, 178, 120, 0.7);
+      transform: scale(1.05);
+    }
+    
+    &:checked {
+      background: rgba(71, 178, 120, 0.9);
+      border-color: rgba(71, 178, 120, 1);
+    }
+    
+    /* Animated checkmark */
+    &:checked::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 8px;
+      width: 4px;
+      height: 9px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      animation: checkmark-appear 0.3s ease;
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(71, 178, 120, 0.2);
+    }
   }
+  
 
   select {
+    cursor: pointer;
     option:first-child {
       color: #767676 !important;
     }
   }
 
   input:focus, select:focus{
-    border-color: $orange-4-color;
-    outline: none !important;
+    background: rgba(255, 255, 255, 0.15);
+    border-bottom: 3px solid rgba(71, 178, 120, 0.8);
+    padding-bottom: 8px;
+    outline: none;
+  }
+
+  input:hover:not(:focus), select:hover:not(:focus) {
+    border-bottom-color: rgba(71, 178, 120, 0.5);
   }
 
   .form-alert{
     font-size: 12px;
     color: red;
+    margin-top: 4px;
   }
 
   .action-buttons{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 30px;
+
+    .submit-button {
+      padding: 14px 2rem;
+      background: rgba(71, 178, 120, 0.9) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        background: rgba(71, 178, 120, 1) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(71, 178, 120, 0.35);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
   }
 
   .user-avatar-preview{
@@ -76,6 +188,10 @@ form.modal-form{
     object-fit: cover;
     object-position: center;
   }
+
+  .review-checkbox{
+    margin-top: 20px !important;
+  }
 }
 
 #modal{
@@ -85,7 +201,9 @@ form.modal-form{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 999;
     display: flex;
     justify-content: center;
@@ -96,30 +214,63 @@ form.modal-form{
     box-sizing: border-box;
     position: fixed;
     z-index: 1000;
-    padding: 2em;
+    padding: 2.5rem;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    overflow: auto;
-    background-color: white;
-    border-radius: 24px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
-    animation: scale-in-center 0.3s;
+    max-height: 90vh;
+    overflow: clip;
+    overflow-y: auto;
+    clip-path: inset(0 round 16px);
+    
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    
+    animation: scale-in-center-modal 0.3s;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: rgba(71, 178, 120, 0.3);
+      border-radius: 10px;
+      
+      &:hover {
+        background: rgba(71, 178, 120, 0.5);
+      }
+    }
 
     .modal-form-header{
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-bottom: 20px;
+      color: $green-0-color;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      margin: 0;
     }
 
     .close-link{
       text-decoration: none;
-      color: #aeaeae;
+      color: $green-0-color;
       font-size: 16px;
+      transition: all 0.3s ease;
       
       &:hover{
-        color: #7e7e7e;
+        color: rgba(71, 178, 120, 0.9);
       }
     }
     

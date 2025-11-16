@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
 
+  def flash_message(action, model)
+    I18n.t(".notices.#{action}.success", model: model.model_name.human)
+  end
+
   if Rails.env.production?
     rescue_from ActionController::RoutingError, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound do |exception|
       render_error 404, exception
