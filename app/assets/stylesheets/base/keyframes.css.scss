@@ -189,3 +189,16 @@
     transform: rotate(45deg) scale(1);
   }
 }
+
+@keyframes glassEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8) translateY(-30px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1) translateY(0);
+    filter: blur(0);
+  }
+}

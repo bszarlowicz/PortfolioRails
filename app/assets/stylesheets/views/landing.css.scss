@@ -686,6 +686,7 @@ menu button.active {
     align-items: center;
     margin-bottom: 1.5rem;
     gap: 1rem;
+    font-family: 'Lato', sans-serif !important;
 
     .reviewer-avatar {
       width: 60px;
@@ -699,7 +700,13 @@ menu button.active {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      background: linear-gradient(45deg, 
+        $green-4-color 0%,  
+        $green-3-color 30%, 
+        $green-2-color 50%, 
+        $green-1-color 75%, 
+        $green-0-color 100%
+      );
       display: flex;
       align-items: center;
       justify-content: center;
@@ -712,6 +719,7 @@ menu button.active {
       flex: 1;
 
       .reviewer-name {
+        font-family: 'Lato', sans-serif !important;
         font-size: 1.1rem;
         font-weight: 600;
         color: #2d3748;
@@ -719,6 +727,7 @@ menu button.active {
       }
 
       .cooperation-type {
+        font-family: 'Lato', sans-serif !important;
         font-size: 0.9rem;
         color: #718096;
         margin: 0;
@@ -747,13 +756,15 @@ menu button.active {
     margin-bottom: 1rem;
 
     .review-description {
+      font-family: 'Lato', sans-serif !important;
       color: #4a5568;
       line-height: 1.6;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
   }
 
   .review-badge {
+    font-family: 'Lato', sans-serif !important;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;

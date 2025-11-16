@@ -31,6 +31,7 @@ pl:
         phone: "Telefon"
 
   log_in: Zaloguj się
+  special_success: "<strong class='flash-heading'>Dziękuję za opinię! Twoja opinia została pomyślnie przesłana.</strong> <span class='flash-details'>Proszę miej na uwadze, że opinie pojawiają się na stronie po moderacji. Ponieważ formularz jest publicznie dostępny dla wszystkich odwiedzających stronę, musiałem wdrożyć ten krok weryfikacji w celu ochrony strony przed spamem i nieodpowiednimi treściami—nie po to, aby uniknąć nieprzychylnych komentarzy. Cenię konstruktywną krytykę i doceniam szczere opinie. Każda opinia, nawet krytyczna, zostanie zaakceptowana, o ile jest autentyczna.</span>"
 
   roles:
     admin: Administrator

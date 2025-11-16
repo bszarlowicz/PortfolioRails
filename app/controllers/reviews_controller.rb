@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        flash[:notice] = flash_message(:create, Review)
+        flash[:success_special] = t(:special_success)
         format.turbo_stream
         format.html { redirect_to root_path }
         format.json { redirect_to root_path }

@@ -8,3 +8,9 @@
         .alert data-controller="flash"
             = flash[:error] || flash[:alert]
             .close-cont = link_to fa_icon("times"), "#", data: {action: "flash#hideFlash"}, title: t(:close)
+
+    - if flash[:success_special]
+        .special.without-auto-close data-controller="flash"
+          .special-content
+            == flash[:success_special]
+          .close-cont = link_to fa_icon("times"), "#", data: {action: "flash#hideFlash"}, title: t(:close)

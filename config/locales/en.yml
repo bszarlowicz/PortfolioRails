@@ -41,6 +41,7 @@ en:
         overall_rating: How would you rate me? (0-5)
 
   log_in: Log in
+  special_success: "<strong class='flash-heading'>Thank you for your review!</strong><strong class='flash-heading'>Your feedback has been submitted successfully.</strong> <span class='flash-details'>Please note that reviews appear on the website after moderation. Since this form is publicly accessible to all visitors, I've implemented this verification step to protect the site from spam and inappropriate content—not to avoid unfavorable feedback. I value constructive criticism and welcome honest opinions. Every review, including critical ones, will be approved as long as it's genuine.</span>"
 
   roles:
     admin: Administrator
