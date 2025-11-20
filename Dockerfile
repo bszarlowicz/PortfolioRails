@@ -12,9 +12,11 @@ ENV RAILS_ENV="production" \
 
 FROM base as build
 
-# Dodaj libmariadb-dev dla MySQL
+# Instaluj pakiety + Node.js
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config libmariadb-dev
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config libmariadb-dev curl && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
