@@ -17,6 +17,7 @@ dist/
 *.log
 /log/*
 /tmp/*
+/tmp/*
 !/log/.keep
 !/tmp/.keep
 
@@ -61,6 +62,4 @@ Thumbs.db
 !/.env*.erb
 /storage
 
-Dockerfile
 public/assets
-config/database.yml
