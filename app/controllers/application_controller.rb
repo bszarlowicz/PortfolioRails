@@ -27,4 +27,16 @@ class ApplicationController < ActionController::Base
     admin_root_path
   end
 
+  protected
+
+  def render_error(status, exception)
+    logger.error exception.message
+    logger.error exception.backtrace.join("\n")
+
+    respond_to do |format|
+      format.html { render template: "errors/error_#{status}", layout: 'layouts/application', status: status }
+      format.all { render nothing: true, status: status }
+    end
+  end
+
 end
