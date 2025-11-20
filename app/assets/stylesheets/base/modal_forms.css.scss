@@ -33,7 +33,7 @@ form.modal-form{
   textarea{
     width: 100% !important;
     border: none;
-    border-bottom: 1px solid rgba(71, 178, 120, 0.25);
+    border-bottom: 2px solid rgba(71, 178, 120, 0.25);
     border-radius: 0;
     background: rgba(255, 255, 255, 0.15);
     padding: 10px 8px;
@@ -49,8 +49,7 @@ form.modal-form{
 
     &:focus {
       background: rgba(255, 255, 255, 0.15);
-      border-bottom: 3px solid rgba(71, 178, 120, 0.8);
-      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(71, 178, 120, 0.8);
       outline: none;
     }
 
@@ -61,7 +60,7 @@ form.modal-form{
 
   input, select{
     border: none;
-    border-bottom: 1px solid rgba(71, 178, 120, 0.25);
+    border-bottom: 2px solid rgba(71, 178, 120, 0.25);
     border-radius: 0;
     background: rgba(255, 255, 255, 0.15);
     padding: 10px 8px;
@@ -137,8 +136,7 @@ form.modal-form{
 
   input:focus, select:focus{
     background: rgba(255, 255, 255, 0.15);
-    border-bottom: 3px solid rgba(71, 178, 120, 0.8);
-    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(71, 178, 120, 0.8);
     outline: none;
   }
 
