@@ -1,5 +1,11 @@
 @import "base/colors.css.scss";
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 body {
   background-color: $green-2-color !important;
   color: white !important;

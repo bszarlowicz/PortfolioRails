@@ -235,6 +235,12 @@
 }
 
 @media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
   .additional-links {
     flex-wrap: wrap;
     .icon-element {

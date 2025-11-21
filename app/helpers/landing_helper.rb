@@ -213,7 +213,7 @@ module LandingHelper
       },
       eateat: {
         top: "data:image/svg+xml;base64,#{Base64.strict_encode64(eateat_top_svg)}",
-        bottom: "data:image/svg+xml;base64,#{Base64.strict_encode64(eateat_bottom_svg)}"
+        bottom: "data:image/svg+xml;base64,#{Base64.strict_encode64(acrylmed_bottom_svg)}"
       },
       fate_whispers: {
         top: "data:image/svg+xml;base64,#{Base64.strict_encode64(fate_whispers_top_svg)}",
