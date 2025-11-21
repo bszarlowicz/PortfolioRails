@@ -1,3 +1,4 @@
 bszarlowicz.com, www.bszarlowicz.com {
+   email bsz.szarlowicz@email.com
     reverse_proxy app:3000
 }

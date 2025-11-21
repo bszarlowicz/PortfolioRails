@@ -15,7 +15,7 @@ export default class extends Controller {
       wheelMinThreshold: 30,
       perPage: 1,
       releaseWheel: false,
-      autoplay: true,
+      autoplay: false,
     });
 
     this.splide.on('moved', (newIndex) => this.updateSideTexts(newIndex));
