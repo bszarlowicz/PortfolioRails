@@ -167,7 +167,7 @@ module LandingHelper
       { icon: 'github', url: 'https://github.com/bszarlowicz/ClassInsight', text: 'Checkout code!' },
       { icon: 'file-pdf-o', file: '/docs/mentora_docs.pdf', text: 'Checkout docs!' },
       { icon: 'download', file: '/docs/mentora_presentation.pptx', text: 'Checkout presentation!' },
-      { icon: 'globe', url: nil, text: 'Try it!', sub_text: 'Soon...' }
+      { icon: 'globe', url: nil, text: 'Try it!', sub_text: 'Maybe in the future...' }
     ]
   end
 
