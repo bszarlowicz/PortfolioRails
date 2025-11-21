@@ -3,6 +3,8 @@ services:
     image: caddy:2.7-alpine
     container_name: caddy
     restart: unless-stopped
+    environment:
+      - ACME_EMAIL=bsz.szarlowicz@email.com
     ports:
       - "80:80"
       - "443:443"
