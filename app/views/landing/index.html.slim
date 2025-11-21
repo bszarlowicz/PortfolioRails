@@ -55,7 +55,11 @@
           span.arrow-description Check out my work
 
   #projects
-    = render 'landing/project_section', **mentora_project(@selected_topic_mentora)
+    = render 'landing/project_section', **mentora_project(@selected_topic)
+    = render 'landing/project_section', **fate_whispers_project(@selected_topic)
+    = render 'landing/project_section', **acrylmed_project(@selected_topic)
+    = render 'landing/project_section', **eateat_project(@selected_topic)
+
   
 #reviews
   .reviews-section

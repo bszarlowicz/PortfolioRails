@@ -10,5 +10,5 @@ div id="description#{project_id.camelize}" class="description-section col-md-6" 
         button.tab-button class="#{selected_tab == tab_key.to_s ? 'active' : ''}" data-action="click->project-tabs#selectTab" data-tab="#{tab_key}"
           = tab_key.to_s.titleize
   
-  .main-description-text.col-md-12.text-start data-project-tabs-target="content"
+  .main-description-text.col-md-12 data-project-tabs-target="content"
     = tabs_data[selected_tab.to_sym][:description]

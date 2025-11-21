@@ -9,7 +9,7 @@
     .row
       - technologies.each do |icon|
         .icon-wrapper.col-3.mx-auto
-          = image_tag icon[:path], class: 'project-icon-element'
+          = image_tag icon[:path], class: "project-icon-element #{icon[:custom_class]}"
           span.text-on-hover
             = icon[:text]
             - if icon[:version]
