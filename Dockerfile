@@ -47,4 +47,6 @@ USER rails:rails
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 EXPOSE 3000
+RUN mkdir -p /rails/storage && \
+    chown -R app:app /rails/storage
 CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
