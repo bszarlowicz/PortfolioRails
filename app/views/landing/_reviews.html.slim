@@ -11,7 +11,7 @@
                 = review.reviewer_name[0] + review.reviewer_surname[0]
             .reviewer-info
               h4.reviewer-name = review.full_name
-              p.cooperation-type = review.cooperation_type
+              p.cooperation-type = t("cooperation_types.#{review.cooperation_type}", default: review.cooperation_type)
           
           .review-rating
             - 5.times do |i|
